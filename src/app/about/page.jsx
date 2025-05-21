@@ -14,7 +14,7 @@ export default function AboutPage() {
         <p className="font-semibold">Follow my work and behind-the-scenes on Instagram:</p>
         <div className="flex justify-center">
           <a
-            href="https://instagram.com/yourusername"
+            href="https://instagram.com/safarwithsketchbook"
             target="_blank"
             rel="noopener noreferrer"
             className="text-blue-600 hover:underline"

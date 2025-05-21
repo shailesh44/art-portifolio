@@ -1,8 +1,9 @@
 import { notFound } from 'next/navigation';
 import { childrensBooks } from '../../data/childrensBooks';
 
-export default function BookDetail({ params }) {
-  const book = childrensBooks.find((b) => b.slug === params.slug);
+export default async function BookDetail({ params }) {
+  const slug = params?.slug;
+  const book = childrensBooks.find((b) => b.slug === slug);
 
   if (!book) return notFound();
 
