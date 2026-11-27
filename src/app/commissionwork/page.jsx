@@ -1,3 +1,7 @@
+import { notFound } from 'next/navigation';
+
+const IS_TEMPORARILY_HIDDEN = true;
+
 const commissions = [
   {
     title: "Pet Portrait",
@@ -17,7 +21,7 @@ const commissions = [
   },
 ];
 
-export default function CommissionPage() {
+function CommissionContent() {
   return (
     <section className="mt-10">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -32,4 +36,12 @@ export default function CommissionPage() {
       </div>
     </section>
   );
+}
+
+export default function CommissionPage() {
+  if (IS_TEMPORARILY_HIDDEN) {
+    notFound();
+  }
+
+  return <CommissionContent />;
 }

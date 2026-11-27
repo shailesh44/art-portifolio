@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local archive & audit notes (not needed in deployment/remote repo)
+/portfolio-originals/
+/PORTFOLIO_AUDIT.md
+
+# windows
+Thumbs.db
+Desktop.ini

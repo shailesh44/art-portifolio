@@ -1,6 +1,9 @@
 'use client';
 import { useState } from 'react';
+import { notFound } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
+
+const IS_TEMPORARILY_HIDDEN = true;
 
 const watercolors = [
   'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg',
@@ -14,7 +17,7 @@ const randomSketches = [
   'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg',
 ];
 
-export default function SketchbookPage() {
+function SketchbookContent() {
   const [activeTab, setActiveTab] = useState('watercolor');
 
   const images = activeTab === 'watercolor' ? watercolors : randomSketches;
@@ -62,4 +65,12 @@ export default function SketchbookPage() {
       </AnimatePresence>
     </section>
   );
+}
+
+export default function SketchbookPage() {
+  if (IS_TEMPORARILY_HIDDEN) {
+    notFound();
+  }
+
+  return <SketchbookContent />;
 }
